@@ -143,7 +143,7 @@ def user_session_update(data):
                     ids_process.append(usre['idhistoriek'])
                     motioncount = conn.get_data(
                         'select count(*) as count from history where idsensor = %s and datetime between %s and %s',
-                        [motion.sensor_id, usr['datetime'], usre['datetime']])
+                        [motion.sensor_id, usre['datetime'], usr['datetime']])
                     if motioncount:
                         motioncount = motioncount[0]['count']
                     socketio.emit('userUpdate', {'name': usr['name'], 'iduser': usr["iduser"],
