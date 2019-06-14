@@ -1,0 +1,1394 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 18px;
+    line-height: 28px;
+    font-family: 'Roboto', Helvetica, arial, sans-serif;
+    box-sizing: border-box;
+    color: #17181A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #F2F6FF;
+}
+
+body {
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #0053FB;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: #0053FB;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: bold;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 500;
+    margin: 0 0 24px;
+}
+
+/*h1 ~ h2{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 8px; /*24px*/
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    color: #0055FF;
+    transition: all .1s ease-in-out;
+}
+
+a:visited,
+a:active,
+a:hover,
+a:focus {
+    color: #002266;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    height: auto;
+    position: relative;
+    padding: 24px 24px 0;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding: 48px 24px 24px;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .o-row--lg {
+        padding: 56px 50px 56px 50px;
+        /*padding-top: 50px; !*72px*!*/
+        /*padding-bottom: 56px; !*48px*!*/
+    }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 69.3333333em; /* 56.4 * 20px = 1128px */
+}
+@media (min-width: 1200px) {
+    .o-container{
+        width: 1248px;
+    }
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    /*overflow-x: hidden;*/
+}
+
+.o-section + .o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section__title {
+        margin-bottom: 64px;
+    }
+}
+
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    /*display: -webkit-flex;*/
+    /*display: -ms-flexbox;*/
+    /*display: flex;*/
+    flex-wrap: wrap;
+}
+
+.o-layout__item {
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .o-layout {
+        display: flex;
+    }
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 24px;
+}
+
+.o-layout--gutter-xl {
+    margin: 0 -48px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+    padding: 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+.o-aside {
+    margin-bottom: 64px;
+}
+
+@media (min-width: 1200px) {
+    .o-aside {
+        position: fixed;
+    }
+
+    .o-aside + .o-section {
+        margin-left: 20%;
+    }
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+.c-logo svg {
+    height: 64px;
+}
+
+.c-header {
+}
+
+.c-nav {
+    margin-top: 48px;
+}
+
+.c-nav ul {
+    padding: 0;
+}
+.c-nav li{
+    list-style: none;
+}
+.c-nav a {
+    color: #17181A;
+    /*text-transform: uppercase;*/
+    /*letter-spacing: 1px;*/
+    text-decoration: none;
+    /*font-size: 13px;*/
+}
+.c-nav__item {
+    height: 40px;
+    margin-left: -50px;
+    padding-left: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.c-nav .c-nav__item--active{
+    border-left: solid 5px #0055FF;
+    padding-left: 50px;
+    color: #0055FF;
+}
+
+.c-nav__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-nav__item .c-nav__icon {
+    margin-right: 32px;
+}
+
+.c-nav__item--active .c-nav__icon {
+    fill: #0055FF;
+}
+
+
+
+/*.c-nav a:hover {*/
+/*    text-shadow: 0 0 8px #8EC7FF;*/
+/*    color: #DBEDFF;*/
+/*}*/
+
+/*.c-nav__list {*/
+/*    justify-content: flex-end;*/
+/*    align-items: center;*/
+/*}*/
+
+/*@media (min-width: 992px) {*/
+/*    .c-header {*/
+/*        display: flex;*/
+/*        justify-content: space-between;*/
+/*    }*/
+
+/*    .c-nav__list {*/
+/*        display: flex;*/
+/*    }*/
+
+/*    .c-nav__item {*/
+/*        margin-left: 48px;*/
+/*    }*/
+
+/*}*/
+
+.c-cta {
+    margin: 16px 0;
+}
+
+.c-cta--primary {
+    background: #0055FF;
+    color: #FFF;
+}
+
+.c-cta__link {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    Line-height: 24px;
+    padding: 16px 32px;
+    border-radius: 32px;
+    transition: 0.5s;
+
+}
+
+.c-cta--secondary {
+}
+
+.c-cta__link {
+    text-decoration: none;
+}
+
+.c-cta__link:visited {
+    color: #FFF;
+}
+
+.c-cta .c-cta__link:hover {
+    background-position: right center;
+}
+
+.c-userselect__list {
+    list-style-type: none;
+    padding: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-userselect__item {
+    line-height: 22px;
+    margin: 0 16px;
+    height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.c-userselect__item--selected {
+    color: #0055FF;
+    border-bottom: solid 1px #0055FF;
+}
+.c-settings{
+    position: relative;
+}
+
+.c-settings__category {
+    width: 100%;
+    position: static;
+}
+.c-settings--locked .c-settings__category, .c-setup--locked .c-setup__category{
+    opacity: .2;
+}
+.c-settings__category + .c-settings__category{
+    margin-top: 32px;
+}
+div + .c-settings {
+    margin-top: 32px;
+}
+
+@media (min-width: 1200px) {
+    .c-settings__category + .c-settings__category{
+        margin-top: 0;
+        padding-left: 32px;
+    }
+}
+
+.c-category__title p {
+    margin: 0;
+    padding: 0;
+}
+
+.c-category__title {
+    margin: 0 0 16px 0;
+}
+
+.c-category__content {
+    padding: 40px 40px;
+    background: #FFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.c-category__content + .c-category__title {
+    margin-top: 48px;
+}
+
+@media (min-width: 1200px) {
+    .c-category__content {
+        padding: 40px 80px;
+    }
+}
+
+div + .c-category__btn {
+    margin: 40px 0 0 0;
+}
+
+.c-category__setting {
+    padding-left: 32px;
+}
+
+.c-category__setting + .c-category__setting {
+    margin-top: 48px;
+}
+
+.c-category__image {
+    /*overflow:hidden;*/
+    /*background: url("../images/alex-lopez-591571-unsplash.jpg") center;*/
+    /*background-size: cover;*/
+}
+
+.c-category__image img {
+    z-index: 0;
+    height: 680px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+/*.o-layout .c-category__setting:first-child{*/
+/*    margin-right: 32px;*/
+/*}*/
+
+.c-category__content .c-input, .c-category__content .c-input__btn {
+    margin-top: 24px;
+    /*margin-left: -32px;*/
+    width: 100%;
+}
+
+.c-input__btn {
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    font-family: 'Roboto', Helvetica, arial, sans-serif;
+    font-weight: lighter;
+    width: 100%;
+    padding: 0 32px;
+    height: 56px;
+    line-height: 56px;
+    border: none;
+    border-radius: 120px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .16) !important;
+}
+
+.c-input__number input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    /*appearance: textfield;*/
+}
+
+.c-input__number input[type=number]::-webkit-inner-spin-button,
+.c-input__number input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.c-input__number input {
+    text-align: center;
+}
+
+.c-input__number span, .c-input__flex span {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: 10000;
+    top: 4px;
+    padding: 24px;
+    /*border: solid black 1px;*/
+}
+
+.c-input__number span:first-child {
+    right: 16px;
+    background: url("../images/baseline-add-24px.svg") no-repeat center;
+    background-size: 24px;
+    cursor: pointer;
+
+
+}
+
+.c-input__number span:last-child {
+    left: 16px;
+    background: url("../images/baseline-remove-24px.svg") no-repeat center;
+    background-size: 24px;
+    cursor: pointer;
+}
+
+.c-input__flex span:first-child {
+    right: 0;
+    background: url("../images/baseline-clear-24px.svg") no-repeat center;
+    background-size: 24px;
+    cursor: pointer;
+}
+.c-input__flex .c-input{
+    padding-right: 64px;
+}
+.c-input__addbtn{
+    /*color: #0055FF;*/
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-top: 16px;
+}
+.c-input__addbtn p{
+    margin-top: 10px;
+}
+.c-input {
+    position: relative;
+    width: 100%;
+}
+
+.c-input__label {
+    width: 100%;
+}
+
+.c-category__setting .c-input {
+    margin-left: -32px;
+    width: calc(100% + 32px);
+}
+
+.c-input input, .c-input__checkbox {
+    position: relative;
+    font-size: 18px;
+    font-family: 'Roboto', Helvetica, arial, sans-serif;
+    font-weight: lighter;
+    width: 100%;
+    padding: 0 32px;
+    height: 56px;
+    line-height: 56px;
+    border: none;
+    border-radius: 120px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .16) !important;
+}
+
+.c-input input:focus {
+    padding: 0 31px;
+    outline: none;
+    border: solid 1px #0055FF;
+    border-radius: 120px !important;
+}
+
+.c-checkbox__container {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+/* Hide the browser's default checkbox */
+.c-checkbox__container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.c-checkbox__checkmark {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #17181A;
+}
+
+/* On mouse-over, add a grey background color */
+.c-checkbox__container:hover input ~ .c-checkbox__checkmark {
+    border: 1px solid #17181A;
+
+}
+
+/* When the checkbox is checked, add a blue background */
+.c-checkbox__container input:checked ~ .c-checkbox__checkmark {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.c-checkbox__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.c-checkbox__container input:checked ~ .c-checkbox__checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.c-checkbox__container .c-checkbox__checkmark:after {
+    left: -1px;
+    top: -2px;
+    width: 24px;
+    height: 24px;
+    background: url("../images/baseline-check-24px.svg") no-repeat center;
+    background-size: 24px;
+
+}
+
+.c-table {
+    width: 100%;
+}
+
+.c-table__row:nth-child(odd) {
+    background: #F2F6FF;
+}
+
+.c-setup {
+    width: 100%;
+    margin-top: 32px;
+    position: relative;
+}
+
+.c-setup .c-category__content {
+    /*max-height: 680px;*/
+}
+
+.c-setup .c-category__title {
+    margin-bottom: 48px;
+}
+
+.c-setup .c-category__title + div {
+    margin-top: 72px;
+}
+
+.c-setup .c-category__title h2, .c-setup .c-category__title h1 {
+    margin: 0;
+}
+
+.c-setup .c-category__content {
+    padding: 0;
+}
+
+.c-setup .c-category__inside {
+    padding: 56px 64px;
+}
+
+@media (min-width: 1200px) {
+    .c-setup .c-category__inside {
+        padding: 112px 128px;
+    }
+
+    .c-setup .c-category__setting {
+        margin-top: 0;
+
+    }
+
+    .c-setup .c-input {
+        align-self: flex-end;
+    }
+
+    .c-setup .c-category__setting:nth-child(odd) {
+        padding-right: 16px;
+    }
+
+    .c-setup .c-category__setting:nth-child(even) {
+        padding-left: 48px;
+    }
+
+
+}
+
+.c-setup .c-category__image {
+    height: 680px;
+}
+
+.c-setup div + .c-category__btn {
+    margin: 80px 0 0 0;
+}
+
+.c-setup p + .c-category__btn {
+    margin: 48px 0 0 0;
+}
+
+.c-overlay{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+}
+.c-settings--locked .c-overlay, .c-setup--locked .c-overlay{
+    display: flex;
+}
+.c-animation__balls {
+    width: 3.5em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c-animation__balls div {
+    width: 0.8em;
+    height: 0.8em;
+
+    border-radius: 50%;
+    background-color: #0055FF;
+    transform: translateY(-100%);
+    animation: wave 0.8s ease-in-out alternate infinite;
+}
+
+.c-animation__balls div:nth-of-type(1) {
+    animation-delay: -0.4s;
+}
+
+.c-animation__balls div:nth-of-type(2) {
+    animation-delay: -0.2s;
+}
+
+@keyframes wave {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+.u-color-secondary-base {
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 18em !important;
+}
+
+.u-max-width-sm {
+    max-width: 32em !important;
+}
+
+.u-max-width-md {
+    max-width: 42em !important;
+}
+
+.u-max-width-lg {
+    max-width: 60em !important;
+}
+
+.u-max-width-xl {
+    max-width: 70em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+/*
+    Utility: Widths
+    ---
+    Utility classes to put specific widths onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-width-auto {
+    width: auto !important;
+}
+
+.u-1-of-2 {
+    width: 50% !important;
+}
+
+.u-1-of-3 {
+    width: 33.3333333333% !important;
+}
+
+.u-2-of-3 {
+    width: 66.6666666667% !important;
+}
+
+.u-1-of-4 {
+    width: 25% !important;
+}
+
+.u-3-of-4 {
+    width: 75% !important;
+}
+
+.u-1-of-5 {
+    width: 20% !important;
+}
+
+.u-2-of-5 {
+    width: 40% !important;
+}
+
+.u-3-of-5 {
+    width: 60% !important;
+}
+
+.u-4-of-5 {
+    width: 80% !important;
+}
+
+.u-1-of-6 {
+    width: 16.6666666667% !important;
+}
+
+.u-5-of-6 {
+    width: 83.3333333333% !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp1 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp1 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp1 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp1 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp1 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp1 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp1 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp1 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp1 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp1 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp2 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp2 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp2 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp2 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp2 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp2 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp2 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp2 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp2 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp2 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp3 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp3 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp3 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp3 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp3 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp3 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp3 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp3 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp3 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp3 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        width: 50% !important;
+    }
+
+    .u-1-of-3-bp4 {
+        width: 33.3333333333% !important;
+    }
+
+    .u-2-of-3-bp4 {
+        width: 66.6666666667% !important;
+    }
+
+    .u-1-of-4-bp4 {
+        width: 25% !important;
+    }
+
+    .u-3-of-4-bp4 {
+        width: 75% !important;
+    }
+
+    .u-1-of-5-bp4 {
+        width: 20% !important;
+    }
+
+    .u-2-of-5-bp4 {
+        width: 40% !important;
+    }
+
+    .u-3-of-5-bp4 {
+        width: 60% !important;
+    }
+
+    .u-4-of-5-bp4 {
+        width: 80% !important;
+    }
+
+    .u-1-of-6-bp4 {
+        width: 16.6666666667% !important;
+    }
+
+    .u-5-of-6-bp4 {
+        width: 83.3333333333% !important;
+    }
+}
+
+.u-width-full {
+    width: 100% !important;
+}
+
+.u-pd-md {
+    margin: 48px 0;
+}
+
+.u-highlight--blue {
+    color: #0055FF;
+}
+
+.u-hide{
+    display: none!important;
+}
+@media (min-width: 1200px) {
+    .u-show-bp4{
+        display: block!important;
+    }
+    .u-hide-bp4{
+        display: none!important;
+    }
+
+}
+.js-part__hide{
+    display: none !important;
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+   No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+

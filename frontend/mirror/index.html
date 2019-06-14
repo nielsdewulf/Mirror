@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mirror</title>
+    <meta name="google" content="notranslate">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/screen.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/dataHandler.js"></script>
+    <script src="scripts/ip.js"></script>
+    <script src="scripts/time.js"></script>
+    <script src="scripts/weather.js"></script>
+    <script src="scripts/calendar.js"></script>
+    <script src="scripts/session.js"></script>
+</head>
+<body>
+<div class="o-row--lg u-fixed-top u-width-full">
+    <div class="o-layout">
+        <div class="o-layout__item u-1-of-2-bp1">
+            <div class="c-weather">
+                <div class="c-weather__now js-weather__now">
+                </div>
+                <div class="c-weather__description js-weather__description">
+                </div>
+                <div class="c-weather__forecast js-weather__forecast">
+                </div>
+
+            </div>
+        </div>
+        <div class="o-layout__item u-1-of-2-bp1 o-layout o-layout--justify-end">
+            <div class="c-datetime u-text-align-right">
+                <h1 class="c-datetime__time js-time"></h1>
+                <div class="c-datetime__date js-date"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="o-row--lg u-fixed-bottom u-width-full">
+    <div class="o-layout">
+        <div class="o-layout__item u-1-of-2-bp1 o-layout o-layout--align-content-end">
+            <div class="c-calendar js-calendar">
+
+            </div>
+            <div class="o-layout u-width-full">
+                <h2 class="c-ip">IP:</h2>
+                <h2 class="js-ip"></h2>
+            </div>
+            <div class="o-layout">
+                <h2 class="c-ip">Dashboard</h2>
+                <h2 class="js-domain"></h2>
+            </div>
+        </div>
+        <div class="o-layout__item u-1-of-2-bp1 o-layout o-layout--justify-end o-layout--align-content-end">
+            <div class="c-options o-layout js-options o-layout--justify-space-between">
+            </div>
+            <div class="c-session js-session u-text-align-right">
+                <h2 class="js-user"></h2>
+                <h2 class="js-session__time">0 seconds</h2>
+                <h2>Touch to end session or walk away.</h2>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

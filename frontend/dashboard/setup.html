@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mirror Users</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <!--    <script src="chosen.jquery.min.js"></script>-->
+    <script src="scripts/dataHandler.js"></script>
+    <script src="scripts/setup.js"></script>
+
+    <!--        <script src="scripts/selectbox.js"></script>-->
+    <link rel="stylesheet" href="css/screen.css">
+    <!--    <link rel="stylesheet" href="css/chosen.css">-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+<div class="o-row o-row--lg o-layout">
+    <div class="o-container">
+        <section class="o-section">
+            <h1 class="c-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.57 113.36">
+                    <title>Mirror</title>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <path d="M104.34,0h-1.93C95.48,15.72,87,34.83,78.93,52.73,70.51,33.88,61.7,14.3,55.23,0h-4C44.42,15.38,36,34.44,28.12,52.56c-7.6-17.3-15.79-36-23-52.56H0V113.36H5.15c7.18-16.56,15.37-35.26,23-52.55C36,78.92,44.42,98,51.21,113.36h4c6.47-14.3,15.28-33.88,23.7-52.73,8,17.9,16.55,37,23.48,52.73h5.16V0ZM3.22,110.62v-9.53c.08-11.59,0-30.22,0-44.41s.08-32.82,0-44.4V2.74c3.22,8.13,12.59,29.86,23.1,53.94C15.81,80.77,6.44,102.49,3.22,110.62Zm50.24-1H53.3c-2.79-6.33-12.3-27.8-23.37-53C41,31.51,50.51,10,53.3,3.7h.16c2.3,5.35,12.3,27.56,23.7,53C65.76,82.1,55.76,104.31,53.46,109.66Zm27.23-53C91.5,32.45,101.35,10.14,104.34,2.74v9.94c-.17,11.36,0,27.21,0,44s-.17,32.64,0,44v9.94C101.35,103.22,91.5,80.91,80.69,56.68Z"/>
+                        </g>
+                    </g>
+                </svg>
+            </h1>
+            <div class="c-setup">
+                <div class="c-overlay">
+                    <div class="c-overlay__animation">
+                        <div class="c-animation__balls">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-setup__category">
+                    <div class="c-category__content">
+                        <div class="js-setup__part o-layout">
+                            <div class="c-category__inside o-layout__item u-1-of-2-bp4 o-layout o-layout--align-content-center">
+                                <div class="c-category__title">
+                                    <h2>Setup</h2>
+                                    <h1>Welcome to Mirror.</h1>
+                                </div>
+                                <p>To get you started on Mirror we will first have to change some settings to let you fully experience the mirror.</p>
+                                <div class="c-category__btn o-layout">
+                                    <div class="c-cta__link c-cta--primary js-next">Let's go!</div>
+                                </div>
+                            </div>
+                            <div class="c-category__image o-layout__item u-1-of-2-bp4">
+                                <img src="images/alex-lopez-591571-unsplash.jpg" alt="Mirror">
+                            </div>
+                        </div>
+                        <div class="js-setup__part o-layout js-part__hide">
+                            <div class="c-category__inside o-layout__item u-1-of-2-bp4 o-layout o-layout--align-content-center">
+                                <div class="c-category__title">
+                                    <h2>Setup 1/3</h2>
+                                    <h1>Create a user</h1>
+                                </div>
+                                <p>To personalize your experience you need to create a user. If multiple people will be using the mirror you may want to create multiple users.</p>
+                                <div class="c-category__btn o-layout">
+                                    <div class="c-cta__link c-cta--primary js-next">Create a user</div>
+                                    <div class="c-cta__link c-cta--secondary js-back">Back</div>
+
+                                </div>
+                            </div>
+                            <div class="c-category__image o-layout__item u-1-of-2-bp4">
+                                <img src="images/taylor-smith-605201-unsplash.jpg" alt="Woman standing in front of a Mirror">
+                            </div>
+                        </div>
+                        <div class="c-category__inside js-setup__part js-part__hide">
+                            <div class="c-category__title">
+                                <h2>Setup 1/3</h2>
+                                <h1>Create a user</h1></div>
+                            <div class="o-layout">
+                                <div class="c-category__setting o-layout__item u-1-of-2-bp4 o-layout">
+                                    <p><b>Name</b> <span class="u-highlight--blue">*</span></p>
+                                    <label class="c-input__label" for="name">Choose a name for your user.</label>
+                                    <div class="c-input"><input id="name" placeholder="Write the name of your user" type="text"></div>
+
+                                </div>
+
+                            </div>
+                            <div class="c-category__btn o-layout">
+                                <div class="c-cta__link c-cta--primary js-next">Next</div>
+                                <div class="c-cta__link c-cta--secondary js-back">Back</div>
+                            </div>
+                        </div>
+                        <div class="c-category__inside js-setup__part js-part__hide">
+                            <div class="c-category__title">
+                                <h2>Setup 2/3</h2>
+                                <h1>Sound</h1></div>
+                            <div class="o-layout">
+                                <div class="c-category__setting o-layout__item u-1-of-2-bp4 o-layout">
+                                    <p><b>Play sound</b></p>
+                                    <p>Uses the inbuilt speaker to alert you when the time limit passes.</p>
+                                    <div class="c-input c-input__checkbox">
+                                        <label class="c-checkbox__container">Play Sounds
+                                            <input id="speaker" type="checkbox" checked="checked">
+                                            <span class="c-checkbox__checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="c-category__setting o-layout__item u-1-of-2-bp4 o-layout">
+                                    <p><b>Time limit (minutes)</b></p>
+                                    <label for="timelimit">A limit in minutes for how long you can stay in front of the mirror. You can leave this blank if not needed.</label>
+                                    <div class="c-input c-input__number"><span></span><input id="timelimit" min="0" max="60" value="0" type="number"><span></span></div>
+
+                                </div>
+
+                            </div>
+                            <div class="c-category__btn o-layout">
+                                <div class="c-cta__link c-cta--primary js-next">Next</div>
+                                <div class="c-cta__link c-cta--secondary js-back">Back</div>
+                            </div>
+                        </div>
+                        <div class="c-category__inside js-setup__part js-part__hide">
+                            <div class="c-category__title">
+                                <h2>Setup 3/3</h2>
+                                <h1>Add extensions to your user</h1></div>
+                            <div class="o-layout">
+                                <div class="c-category__setting o-layout__item u-1-of-2-bp4">
+                                    <p><b>Google Calendar</b></p>
+                                    <p>Log in using your Google Account. The mirror will only get access to your calendar. Your information stays on your mirror.</p>
+                                    <div class="c-input c-input__btn js-googlecal" data-action="connect">Connect with Google Calendar</div>
+
+                                </div>
+                                <div class="c-category__setting o-layout__item u-1-of-2-bp4">
+                                    <p><b>Calendar URL</b></p>
+                                    <p>If you have an iCal url or an url ending with .ics you can fill it out below.</p>
+                                    <div class="c-input__flex js-ical__group">
+
+                                    </div>
+                                    <div class="c-input__addbtn js-ical__add">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="#0055FF" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                            <path d="M0 0h24v24H0z" fill="none"/>
+                                        </svg>
+                                        <p>Add another</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-category__btn o-layout">
+                                <div class="c-cta__link c-cta--primary js-next js-save">Save user</div>
+                                <div class="c-cta__link c-cta--secondary js-back">Back</div>
+                            </div>
+                        </div>
+                        <div class="js-setup__part o-layout js-part__hide">
+                            <div class="c-category__inside o-layout__item u-1-of-2-bp4 o-layout o-layout--align-content-center">
+                                <div class="c-category__title">
+                                    <h2>Finish</h2>
+                                    <h1>You are set!</h1>
+                                </div>
+                                <p>You are ready to use your new mirror. Click below to go to the dashboard. Or create another user for your mirror.</p>
+                                <div class="c-category__btn o-layout">
+                                    <div class="c-cta__link c-cta--primary js-finish">Finish setup</div>
+                                    <div class="c-cta__link c-cta--secondary js-redo">Add user</div>
+                                </div>
+                            </div>
+                            <div class="c-category__image o-layout__item u-1-of-2-bp4">
+                                <img src="images/jovis-aloor-573874-unsplash.jpg" alt="Mirror">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>
