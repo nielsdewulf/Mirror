@@ -855,7 +855,7 @@ div + .c-category__btn {
 }
 
 .c-setup .c-category__inside {
-    padding: 56px 64px;
+    padding: 40px 48px;
 }
 
 @media (min-width: 1200px) {
